@@ -3,7 +3,7 @@
 namespace Tests;
 
 use App\Multiply;
-use App\MultiplyBy5Command;
+use App\MultiplyBy1Command;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Tester\CommandTester;
 
@@ -21,6 +21,6 @@ class MultiplyBy1CommandTest extends TestCase
          'number' => '1',
      ]);
      $output = $commandTester->getDisplay();
-     $this->assertSame("1 * 1 = 1\n", $output);
+     $this->assertSame("1 * 1 = 1".PHP_EOL, $output);
    }
 }
