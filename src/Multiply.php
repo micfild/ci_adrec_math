@@ -18,5 +18,19 @@ class Multiply
         $number = new BigNumber($number);
         $number->multiply(3);
         return intval($number->getValue());
+     }
+
+    public function multiplyBy8(int $number)
+    {
+        $number = new BigNumber($number);
+        $number->multiply(8);
+        return intval($number->getValue());
+    }
+  
+    public function multiplyBy7(int $number)
+    {
+        $number = new BigNumber($number);
+        $number->multiply(7);
+        return intval($number->getValue());
     }
 }
