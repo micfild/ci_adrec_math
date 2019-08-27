@@ -5,6 +5,9 @@
 require __DIR__.'/vendor/autoload.php';
 
 use App\MultiplyBy5Command;
+
+use App\MultiplyBy8Command;
+use App\MultiplyBy7Command;
 use Symfony\Component\Console\Application;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Reference;
@@ -16,8 +19,16 @@ $containerBuilder->register('multiply', Multiply::class);
 $containerBuilder->register('multiply_by_5_command', MultiplyBy5Command::class)
   ->addArgument(new Reference('multiply'));
 
+$containerBuilder->register('multiply_by_8_command', MultiplyBy8Command::class)
+  ->addArgument(new Reference('multiply'));
+$containerBuilder->register('multiply_by_7_command', MultiplyBy7Command::class)
+    ->addArgument(new Reference('multiply'));
+
 $containerBuilder
     ->register('application', Application::class)
-    ->addMethodCall('add', [new Reference('multiply_by_5_command')]);
+    ->addMethodCall('add', [new Reference('multiply_by_5_command')])
+    ->addMethodCall('add', [new Reference('multiply_by_8_command')])
+    ->addMethodCall('add', [new Reference('multiply_by_7_command')]);
+
 
 $containerBuilder->get('application')->run();
