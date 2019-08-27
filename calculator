@@ -22,10 +22,7 @@ $containerBuilder->register('multiply_by_10_command', MultiplyBy10Command::class
 
 $containerBuilder
     ->register('application', Application::class)
-    ->addMethodCall('add', [new Reference('multiply_by_5_command')]);
-
-$containerBuilder
-    ->register('application', Application::class)
+    ->addMethodCall('add', [new Reference('multiply_by_5_command')])
     ->addMethodCall('add', [new Reference('multiply_by_10_command')]);
 
 $containerBuilder->get('application')->run();
