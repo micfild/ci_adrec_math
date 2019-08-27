@@ -3,24 +3,24 @@
 namespace Tests;
 
 use App\Multiply;
-use App\MultiplyBy5Command;
+use App\MultiplyBy8Command;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Tester\CommandTester;
 
 /**
  * @group integration
  */
-class MultiplyBy5CommandTest extends TestCase
+class MultiplyBy8CommandTest extends TestCase
 {
   public function testExecute()
   {
-     $command = new MultiplyBy5Command(new Multiply());
+     $command = new MultiplyBy8Command(new Multiply());
      $commandTester = new CommandTester($command);
 
      $commandTester->execute([
-         'number' => '5',
+         'number' => '8',
      ]);
      $output = $commandTester->getDisplay();
-     $this->assertSame("5 * 5 = 25".PHP_EOL, $output);
+     $this->assertSame("8 * 8 = 64".PHP_EOL, $output);
    }
 }
