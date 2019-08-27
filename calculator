@@ -29,3 +29,6 @@ $containerBuilder
     ->addMethodCall('add', [new Reference('multiply_by_10_command')]);
 
 $containerBuilder->get('application')->run();
+
+
+// travis test
