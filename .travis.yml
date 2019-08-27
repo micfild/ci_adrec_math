@@ -3,6 +3,6 @@ install: composer install
 php:
   - '7.0'
 script:
-  -./bin/phpunit
-  -./bin/phpunit --group integration
+  ./bin/phpunit
+  ./bin/phpunit --group integration
 
