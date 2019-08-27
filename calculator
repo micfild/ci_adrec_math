@@ -17,16 +17,12 @@ $containerBuilder->register('multiply', Multiply::class);
 $containerBuilder->register('multiply_by_5_command', MultiplyBy5Command::class)
   ->addArgument(new Reference('multiply'));
 
-$containerBuilder
-    ->register('application', Application::class)
-    ->addMethodCall('add', [new Reference('multiply_by_5_command')]);
-
 $containerBuilder->register('multiply_by_3_command', MultiplyBy3Command::class)
     ->addArgument(new Reference('multiply'));
 
-
 $containerBuilder
     ->register('application', Application::class)
+    ->addMethodCall('add', [new Reference('multiply_by_5_command')])
     ->addMethodCall('add', [new Reference('multiply_by_3_command')]);
 
 $containerBuilder->get('application')->run();
