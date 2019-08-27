@@ -5,4 +5,3 @@ install: composer install
 script:
   - ./bin/phpunit --group integration
   - ./bin/phpunit
- 9  calculator 
