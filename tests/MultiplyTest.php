@@ -26,6 +26,16 @@ class MultiplyTest extends TestCase
         $this->assertEquals(20, $this->multiply->multiplyBy5(4));
     }
 
+    public function testMultiply10BY2()
+    {
+        $this->assertEquals(20, $this->multiply->multiplyBy10(2));
+    }
+
+    public function testMultiply10BY15()
+    {
+        $this->assertEquals(150, $this->multiply->multiplyBy10(15));
+    }
+
     public function testMultiply3By5()
     {
         $this->assertSame(15, $this->multiply->multiplyBy3(5));

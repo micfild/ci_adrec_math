@@ -13,6 +13,13 @@ class Multiply
         return intval($number->getValue());
     }
 
+    public function multiplyBy10(int $number)
+    {
+        $number = new BigNumber($number);
+        $number->multiply(10);
+        return intval($number->getValue());
+    }
+  
     public function multiplyBy3(int $number)
     {
         $number = new BigNumber($number);
