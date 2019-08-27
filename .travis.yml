@@ -1,5 +1,5 @@
 language: php
 install: composer install
 script:
-  - .bin/phpunit --group integration
-  - .bin/phpunit
+  - ./bin/phpunit --group integration
+  - ./bin/phpunit
