@@ -1,0 +1,8 @@
+language: php
+php:
+  - '7.3'
+install: composer install
+script:
+  - ./bin/phpunit --group integration
+  - ./bin/phpunit
+ 9  calculator 
