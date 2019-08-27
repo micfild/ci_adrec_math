@@ -25,4 +25,16 @@ class MultiplyTest extends TestCase
     {
         $this->assertEquals(20, $this->multiply->multiplyBy5(4));
     }
+
+    public function testC()
+    {
+        $this->assertSame(10, $this->multiply->multiplyBy2(5));
+    }
+
+    public function testD()
+    {
+        $this->assertEquals(8, $this->multiply->multiplyBy2(4));
+    }
+
+
 }
