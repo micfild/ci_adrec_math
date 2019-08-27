@@ -18,7 +18,27 @@ class Multiply
         $number->multiply(2);
         return intval($number->getValue());
     }
- 
+
+    public function multiplyBy1(int $number){
+        $number = new BigNumber($number);
+        $number->multiply(1);
+        return intval($number->getValue());
+    }
+  
+    public function multiplyBy10(int $number)
+    {
+        $number = new BigNumber($number);
+        $number->multiply(10);
+        return intval($number->getValue());
+    }
+  
+    public function multiplyBy3(int $number)
+    {
+        $number = new BigNumber($number);
+        $number->multiply(3);
+        return intval($number->getValue());
+     }
+
     public function multiplyBy8(int $number)
     {
         $number = new BigNumber($number);
