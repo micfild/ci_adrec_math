@@ -13,11 +13,12 @@ use App\Multiply;
 $containerBuilder = new ContainerBuilder();
 $containerBuilder->register('multiply', Multiply::class);
 
-$containerBuilder->register('multiply_by_5_command', MultiplyBy5Command::class)
+$containerBuilder->register('multiply_by_5_command', MultiplyBy5Command::class);
+$containerBuilder->register('multiply_by_2_command', MultiplyBy2Command::class)
   ->addArgument(new Reference('multiply'));
 
 $containerBuilder
-    ->register('application', Application::class)
-    ->addMethodCall('add', [new Reference('multiply_by_5_command')]);
+    ->register('application', Application::class);
+
 
 $containerBuilder->get('application')->run();
