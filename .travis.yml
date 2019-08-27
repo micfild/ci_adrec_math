@@ -1,6 +1,7 @@
-language : php
+language: php
+php:
+  - '7.3'
 install: composer install
 script:
- - ./bin/phpunit
- - ./bin/phpunit --group integration
-
+  - ./bin/phpunit --group integration
+  - ./bin/phpunit
