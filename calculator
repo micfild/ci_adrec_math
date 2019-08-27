@@ -24,6 +24,7 @@ $containerBuilder
 $containerBuilder->register('multiply_by_3_command', MultiplyBy3Command::class)
     ->addArgument(new Reference('multiply'));
 
+
 $containerBuilder
     ->register('application', Application::class)
     ->addMethodCall('add', [new Reference('multiply_by_3_command')]);
