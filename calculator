@@ -31,4 +31,3 @@ $containerBuilder
 $containerBuilder->get('application')->run();
 
 
-// travis test
