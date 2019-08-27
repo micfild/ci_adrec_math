@@ -9,6 +9,9 @@ use App\MultiplyBy10Command;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Tester\CommandTester;
 
+/**
+ * @group integration
+ */
 class MultiplyBy10CommandTest extends TestCase
 {
     public function testExecute()
