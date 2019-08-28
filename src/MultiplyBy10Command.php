@@ -35,7 +35,7 @@ class MultiplyBy10Command extends Command
     {
         $arg = $input->getArgument('number');
         $output->writeln(
-            $arg." * 10 = ".$this->multiply->multiplyBy10($arg)
+            $arg." * 5 = ".$this->multiply->multiplyBy10($arg)
         );
     }
 }
