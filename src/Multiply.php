@@ -65,6 +65,7 @@ class Multiply
     {
         $number = new BigNumber($number);
         $number->multiply(100);
+        return intval($number->getValue());
     }
   
     public function multiplyBy42(int $number)
