@@ -1,12 +1,10 @@
 <?php
 
 namespace Tests;
-
 use App\Multiply;
 use App\MultiplyBy100Command;
 use PHPUnit\Framework\TestCase;
 use Symfony\Component\Console\Tester\CommandTester;
-
 /**
  * @group integration
  */
