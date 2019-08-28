@@ -53,6 +53,13 @@ class Multiply
         return intval($number->getValue());
     }
 
+    public function multiplyBy42(int $number)
+    {
+        $number = new BigNumber($number);
+        $number->multiply(42);
+        return intval($number->getValue());
+    }
+  
     public function multiplyBy69(int $number)
     {
         $number = new BigNumber($number);

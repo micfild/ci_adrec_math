@@ -6,6 +6,7 @@ require __DIR__ . '/vendor/autoload.php';
 
 use App\Multiply;
 use App\MultiplyBy2Command;
+use App\MultiplyBy42Command;
 use App\MultiplyBy5Command;
 use App\MultiplyBy1Command;
 use App\MultiplyBy10Command;
@@ -13,6 +14,7 @@ use App\MultiplyBy3Command;
 use App\MultiplyBy8Command;
 use App\MultiplyBy7Command;
 use App\MultiplyBy69Command;
+
 use Symfony\Component\Console\Application;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Reference;
@@ -41,8 +43,12 @@ $containerBuilder->register('multiply_by_10_command', MultiplyBy10Command::class
 $containerBuilder->register('multiply_by_1_command', MultiplyBy1Command::class)
   ->addArgument(new Reference('multiply'));
 
+$containerBuilder->register('multiply_by_42_command', MultiplyBy42Command::class)
+    ->addArgument(new Reference('multiply'));
+
 $containerBuilder->register('multiply_by_69_command', MultiplyBy69Command::class)
   ->addArgument(new Reference('multiply'));
+
 
 $containerBuilder
     ->register('application', Application::class)
@@ -52,8 +58,10 @@ $containerBuilder
     ->addMethodCall('add', [new Reference('multiply_by_10_command')])
     ->addMethodCall('add', [new Reference('multiply_by_3_command')])
     ->addMethodCall('add', [new Reference('multiply_by_8_command')])
+    ->addMethodCall('add', [new Reference('multiply_by_42_command')])
     ->addMethodCall('add', [new Reference('multiply_by_7_command')])
     ->addMethodCall('add', [new Reference('multiply_by_69_command')]);
+
 
 $containerBuilder->get('application')->run();
 
