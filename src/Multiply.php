@@ -24,14 +24,14 @@ class Multiply
         $number->multiply(1);
         return intval($number->getValue());
     }
-  
+
     public function multiplyBy10(int $number)
     {
         $number = new BigNumber($number);
         $number->multiply(10);
         return intval($number->getValue());
     }
-  
+
     public function multiplyBy3(int $number)
     {
         $number = new BigNumber($number);
@@ -45,7 +45,14 @@ class Multiply
         $number->multiply(8);
         return intval($number->getValue());
     }
-  
+
+    public function multiplyBy9(int $number)
+    {
+        $number = new BigNumber($number);
+        $number->multiply(9);
+        return intval($number->getValue());
+    }
+
     public function multiplyBy7(int $number)
     {
         $number = new BigNumber($number);
@@ -53,10 +60,24 @@ class Multiply
         return intval($number->getValue());
     }
 
+
     public function multiplyBy100(int $number)
     {
         $number = new BigNumber($number);
         $number->multiply(100);
+    }
+  
+    public function multiplyBy42(int $number)
+    {
+        $number = new BigNumber($number);
+        $number->multiply(42);
+        return intval($number->getValue());
+    }
+  
+    public function multiplyBy69(int $number)
+    {
+        $number = new BigNumber($number);
+        $number->multiply(69);
         return intval($number->getValue());
     }
 }
