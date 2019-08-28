@@ -96,5 +96,13 @@ class MultiplyTest extends TestCase
         $this->assertEquals(168, $this->multiply->multiplyBy42(4));
     }
 
+    public function testMultiply69BY1()
+    {
+        $this->assertSame(69, $this->multiply->multiplyBy69(1));
+    }
+    public function testMultiply69BY2()
+    {
+        $this->assertSame(138, $this->multiply->multiplyBy69(2));
+    }
 
 }
