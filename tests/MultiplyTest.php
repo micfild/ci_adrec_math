@@ -35,7 +35,7 @@ class MultiplyTest extends TestCase
     {
         $this->assertEquals(8, $this->multiply->multiplyBy2(4));
     }
- 
+
     public function testMultiply1BY1()
     {
         $this->assertSame(1, $this->multiply->multiplyBy1(1));
@@ -70,7 +70,7 @@ class MultiplyTest extends TestCase
     {
         $this->assertSame(40, $this->multiply->multiplyBy8(5));
     }
-  
+
     public function testMultiply7BY5()
     {
         $this->assertSame(35, $this->multiply->multiplyBy7(5));
@@ -84,5 +84,15 @@ class MultiplyTest extends TestCase
     public function testMultiply7BY6()
     {
         $this->assertSame(42, $this->multiply->multiplyBy7(6));
+    }
+
+    public function testMultiply9BY9()
+    {
+        $this->assertSame(81, $this->multiply->multiplyBy9(9));
+    }
+
+    public function testMultiply9BY5()
+    {
+        $this->assertSame(45, $this->multiply->multiplyBy9(5));
     }
 }
