@@ -14,6 +14,7 @@ use App\MultiplyBy3Command;
 use App\MultiplyBy8Command;
 use App\MultiplyBy7Command;
 use App\MultiplyBy16Command;
+use App\MultiplyBy9Command;
 use App\MultiplyBy69Command;
 
 use Symfony\Component\Console\Application;
@@ -47,6 +48,9 @@ $containerBuilder->register('multiply_by_1_command', MultiplyBy1Command::class)
 $containerBuilder->register('multiply_by_16_command', MultiplyBy16Command::class)
     ->addArgument(new Reference('multiply'));
 
+$containerBuilder->register('multiply_by_9_command', MultiplyBy9Command::class)
+    ->addArgument(new Reference('multiply'));
+
 $containerBuilder->register('multiply_by_42_command', MultiplyBy42Command::class)
     ->addArgument(new Reference('multiply'));
 
@@ -63,6 +67,8 @@ $containerBuilder
     ->addMethodCall('add', [new Reference('multiply_by_3_command')])
     ->addMethodCall('add', [new Reference('multiply_by_8_command')])
     ->addMethodCall('add', [new Reference('multiply_by_16_command')]);
+    ->addMethodCall('add', [new Reference('multiply_by_7_command')])
+    ->addMethodCall('add', [new Reference('multiply_by_9_command')]);
     ->addMethodCall('add', [new Reference('multiply_by_42_command')])
     ->addMethodCall('add', [new Reference('multiply_by_7_command')])
     ->addMethodCall('add', [new Reference('multiply_by_69_command')]);
