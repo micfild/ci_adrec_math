@@ -10,7 +10,7 @@ use Symfony\Component\Console\Tester\CommandTester;
 /**
  * @group integration
  */
-class MultiplyBy1CommandTest extends TestCase
+class MultiplyBy100CommandTest extends TestCase
 {
     public function testExecute()
     {
