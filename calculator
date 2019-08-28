@@ -68,7 +68,7 @@ $containerBuilder
     ->addMethodCall('add', [new Reference('multiply_by_8_command')])
     ->addMethodCall('add', [new Reference('multiply_by_16_command')]);
     ->addMethodCall('add', [new Reference('multiply_by_7_command')])
-    ->addMethodCall('add', [new Reference('multiply_by_9_command')]);
+    ->addMethodCall('add', [new Reference('multiply_by_9_command')])
     ->addMethodCall('add', [new Reference('multiply_by_42_command')])
     ->addMethodCall('add', [new Reference('multiply_by_7_command')])
     ->addMethodCall('add', [new Reference('multiply_by_69_command')]);
