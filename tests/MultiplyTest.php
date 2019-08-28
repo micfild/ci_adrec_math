@@ -95,4 +95,6 @@ class MultiplyTest extends TestCase
     {
         $this->assertEquals(168, $this->multiply->multiplyBy42(4));
     }
+
+
 }
