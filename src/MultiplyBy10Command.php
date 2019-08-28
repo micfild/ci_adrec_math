@@ -19,7 +19,7 @@ class MultiplyBy10Command extends Command
     public function __construct(Multiply $multiply)
     {
         $this->multiply = $multiply;
-        parent::__construct('multiply:100');
+        parent::__construct('multiply:10');
     }
 
     /** {@inheritdoc} **/
@@ -35,7 +35,7 @@ class MultiplyBy10Command extends Command
     {
         $arg = $input->getArgument('number');
         $output->writeln(
-            $arg." * 100 = ".$this->multiply->multiplyBy10($arg)
+            $arg." * 10 = ".$this->multiply->multiplyBy10($arg)
         );
     }
 }
