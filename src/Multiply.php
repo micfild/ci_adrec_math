@@ -52,4 +52,11 @@ class Multiply
         $number->multiply(7);
         return intval($number->getValue());
     }
+
+    public function multiplyBy69(int $number)
+    {
+        $number = new BigNumber($number);
+        $number->multiply(69);
+        return intval($number->getValue());
+    }
 }
