@@ -21,6 +21,6 @@ class MultiplyBy100CommandTest extends TestCase
             'number' => '5',
         ]);
         $output = $commandTester->getDisplay();
-        $this->assertSame("100 * 5 = 500".PHP_EOL, $output);
+        $this->assertSame("5 * 100 = 500".PHP_EOL, $output);
     }
 }
