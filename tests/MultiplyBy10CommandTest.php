@@ -23,6 +23,6 @@ class MultiplyBy10CommandTest extends TestCase
             'number' => '5',
         ]);
         $output = $commandTester->getDisplay();
-        $this->assertSame("10 * 5 = 50".PHP_EOL, $output);
+        $this->assertSame("5 * 10 = 50".PHP_EOL, $output);
     }
 }
