@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "682a606de3310ad4ed2fad19b321f0d1",
+    "content-hash": "99aa2e5c9c584d13183eb79b28681be0",
     "packages": [
         {
             "name": "moontoast/math",
@@ -221,24 +221,25 @@
         },
         {
             "name": "symfony/dependency-injection",
-            "version": "v2.0.15",
+            "version": "v2.0.19",
             "target-dir": "Symfony/Component/DependencyInjection",
             "source": {
                 "type": "git",
                 "url": "https://github.com/symfony/dependency-injection.git",
-                "reference": "787f4a6a1f70f1e9a09181916091b3076425b909"
+                "reference": "0ddf8e66fb2a55e4424b9680075cc50568689b75"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/787f4a6a1f70f1e9a09181916091b3076425b909",
-                "reference": "787f4a6a1f70f1e9a09181916091b3076425b909",
+                "url": "https://api.github.com/repos/symfony/dependency-injection/zipball/0ddf8e66fb2a55e4424b9680075cc50568689b75",
+                "reference": "0ddf8e66fb2a55e4424b9680075cc50568689b75",
                 "shasum": ""
             },
             "require": {
                 "php": ">=5.3.2"
             },
             "suggest": {
-                "symfony/yaml": "v2.0.15"
+                "symfony/config": "v2.0.19",
+                "symfony/yaml": "v2.0.19"
             },
             "type": "library",
             "autoload": {
@@ -262,7 +263,7 @@
             ],
             "description": "Symfony DependencyInjection Component",
             "homepage": "http://symfony.com",
-            "time": "2012-05-20T16:15:10+00:00"
+            "time": "2012-11-27T08:54:37+00:00"
         }
     ],
     "packages-dev": [
