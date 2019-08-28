@@ -1,41 +1,28 @@
 <?php
 
 
+namespace Tests;
 
-namespace App;
 
+use App\Multiply;
+use App\MultiplyBy16Command;
+use PHPUnit\Framework\TestCase;
+use Symfony\Component\Console\Tester\CommandTester;
 
-use Moontoast\Math\BigNumber;
-use Symfony\Component\Console\Command\Command;
-use Symfony\Component\Console\Input\InputArgument;
-use Symfony\Component\Console\Input\InputInterface;
-use Symfony\Component\Console\Output\OutputInterface;
-
-class MultiplyBy16Command extends Command
+/**
+ * @group integration
+ */
+class MultiplyBy16CommandTest extends TestCase
 {
-    /** @var Multiply **/
-    private $multiply;
-
-    public function __construct(Multiply $multiply)
+    public function testExecute()
     {
-        $this->multiply = $multiply;
-        parent::__construct('multiply:16');
-    }
+        $command = new MultiplyBy16Command(new Multiply());
+        $commandTester = new CommandTester($command);
 
-    /** {@inheritdoc} **/
-    protected function configure()
-    {
-        $this
-            ->setDescription('Multiply two number.')
-            ->addArgument('number', InputArgument::REQUIRED);
-    }
-
-    /** {@inheritdoc} **/
-    protected function execute(InputInterface $input, OutputInterface $output)
-    {
-        $arg = $input->getArgument('number');
-        $output->writeln(
-            $arg." * 16 = ".$this->multiply->multiplyBy16($arg)
-        );
+        $commandTester->execute([
+            'number' => '5',
+        ]);
+        $output = $commandTester->getDisplay();
+        $this->assertSame("5 * 16 = 80\n", $output);
     }
 }

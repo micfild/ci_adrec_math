@@ -34,7 +34,7 @@ class MultiplyBy16Command extends Command
     {
         $arg = $input->getArgument('number');
         $output->writeln(
-            $arg." * 16 = ".$this->multiply->multiplyBy10($arg)
+            $arg." * 16 = ".$this->multiply->multiplyBy16($arg)
         );
     }
 }
