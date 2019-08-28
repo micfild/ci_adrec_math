@@ -13,6 +13,7 @@ use App\MultiplyBy10Command;
 use App\MultiplyBy3Command;
 use App\MultiplyBy8Command;
 use App\MultiplyBy7Command;
+use App\MultiplyBy100Command;
 use App\MultiplyBy16Command;
 use App\MultiplyBy9Command;
 use App\MultiplyBy69Command;
@@ -45,6 +46,9 @@ $containerBuilder->register('multiply_by_10_command', MultiplyBy10Command::class
 $containerBuilder->register('multiply_by_1_command', MultiplyBy1Command::class)
   ->addArgument(new Reference('multiply'));
 
+$containerBuilder->register('multiply_by_100_command', MultiplyBy100Command::class)
+    ->addArgument(new Reference('multiply'));
+
 $containerBuilder->register('multiply_by_16_command', MultiplyBy16Command::class)
     ->addArgument(new Reference('multiply'));
 
@@ -58,6 +62,7 @@ $containerBuilder->register('multiply_by_69_command', MultiplyBy69Command::class
   ->addArgument(new Reference('multiply'));
 
 
+
 $containerBuilder
     ->register('application', Application::class)
     ->addMethodCall('add', [new Reference('multiply_by_5_command')])
@@ -66,13 +71,12 @@ $containerBuilder
     ->addMethodCall('add', [new Reference('multiply_by_10_command')])
     ->addMethodCall('add', [new Reference('multiply_by_3_command')])
     ->addMethodCall('add', [new Reference('multiply_by_8_command')])
-    ->addMethodCall('add', [new Reference('multiply_by_16_command')]);
-    ->addMethodCall('add', [new Reference('multiply_by_7_command')])
+    ->addMethodCall('add', [new Reference('multiply_by_16_command')])
+    ->addMethodCall('add', [new Reference('multiply_by_100_command')])
     ->addMethodCall('add', [new Reference('multiply_by_9_command')])
     ->addMethodCall('add', [new Reference('multiply_by_42_command')])
     ->addMethodCall('add', [new Reference('multiply_by_7_command')])
     ->addMethodCall('add', [new Reference('multiply_by_69_command')]);
-
 
 $containerBuilder->get('application')->run();
 

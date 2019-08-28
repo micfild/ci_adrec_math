@@ -5,14 +5,14 @@ use Symfony\Component\Console\Command\Command;
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
-class MultiplyBy10Command extends Command
+class MultiplyBy100Command extends Command
 {
     /** @var Multiply **/
     private $multiply;
     public function __construct(Multiply $multiply)
     {
         $this->multiply = $multiply;
-        parent::__construct('multiply:10');
+        parent::__construct('multiply:100');
     }
     /** {@inheritdoc} **/
     protected function configure()
@@ -26,7 +26,7 @@ class MultiplyBy10Command extends Command
     {
         $arg = $input->getArgument('number');
         $output->writeln(
-            $arg." * 10 = ".$this->multiply->multiplyBy10($arg)
+            $arg." * 100 = ".$this->multiply->multiplyBy100($arg)
         );
     }
 }
